@@ -1,5 +1,5 @@
 export default {
-  empty: '{alias}不能为空',
+  empty: '{alias}输入不能为空',
   length: '请输入{length}位字符',
   minLength: '输入内容至少{minLength}位呀呀',
   number: '请输入数字',
