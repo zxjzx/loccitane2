@@ -11,5 +11,6 @@ export default {
   maxDecimalLength: '该输入项最多接受{maxDecimalLength}位小数',
   phone: '请输入正确的手机号',
   email: '请输入正确的邮箱',
-  verifyCode: '请输入正确的验证码'
+  verifyCode: '请输入正确的验证码',
+  test: '测试上传内容'
 }
