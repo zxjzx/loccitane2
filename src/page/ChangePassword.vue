@@ -35,6 +35,18 @@
         },
         input:'测试数据了'
       }
+    },
+    methods:{
+      getData () {
+        this.$http.post('/news', 'type=top&key=123456').then(res => {
+          console.log(res.data)
+
+          this.tableList = res.data.data
+        })
+      }
+    },
+    mounted(){
+      this.getData();
     }
   }
 </script>
