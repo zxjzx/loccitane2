@@ -14,7 +14,12 @@ module.exports = [{
 }, {
   name: 'Home',
   icon:'el-icon-third-shouye',
-  id: 'home'
+  id: 'home',
+  sub: [{
+    name: 'getMyTable',
+    icon:'el-icon-third-lock',
+    componentName: 'getMyTable'
+  }]
 }, {
   name: 'Shop',
   icon:'el-icon-third-location',
