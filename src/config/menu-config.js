@@ -24,7 +24,11 @@ module.exports = [{
   name: 'Shop',
   icon:'el-icon-third-location',
   id: 'shop',
-  sub: []
+  sub: [{
+    name: 'shop',
+    icon:'el-icon-third-lock',
+    componentName: 'shop'
+  }]
 }, {
   name: 'Member',
   icon:'el-icon-third-Member',

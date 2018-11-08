@@ -4,7 +4,8 @@ import HelloWorld from '@/components/HelloWorld'
 import ChangePassword from '@/page/ChangePassword'
 import Logout from '@/page/Logout'
 import Login from '@/page/login'
-import getMyTable from '@/page/home/get-my-table.vue'
+import getMyTable from '@/page/home/get-my-table'
+import shop from '@/page/shop/shop'
 // src/page/login
 Vue.use(Router)
 
@@ -30,6 +31,11 @@ export default new Router({
       path: '/getMyTable',
       name: 'getMyTable',
       component: getMyTable
+    },
+    {
+      path: '/shop',
+      name: 'shop',
+      component: shop
     }
   ]
 })

@@ -13,13 +13,11 @@
             <i :class="item.icon"></i><span v-text="item.name"></span>
           </template>
           <el-menu-item-group class="over-hide" v-for="sub in item.sub" :key="sub.componentName" >
-
             <el-menu-item :index="sub.componentName">
               <i :class="sub.icon"></i>{{sub.name}}
             </el-menu-item>
           </el-menu-item-group>
         </el-submenu>
-
       </el-menu>
     </el-col>
   </el-row>
