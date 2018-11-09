@@ -1,9 +1,28 @@
 <template>
   <div>
+    <span class="font-color">回调的作用</span>
+    再说一件事，昨晚，公司部门一块去吃了海鲜，吃的时候他们广州这边的一直在强调好好吃，
+    好划算，怎么怎么的，其实说实话，我都吃不惯，感觉许多东西都有股腥味。。。。。。。
     <div v-for="item in newArr">
-      <h1 v-if="item.level==0">{{item.name}}</h1>
-      <h4 v-if="item.level>0">{{item.name}}</h4>
+      <h1 v-if="item.level==0">{{item.meta.text}} - 等级 {{item.level}}</h1>
+      <h4 v-if="item.level>0">{{item.meta.text}} - 等级 {{item.level}}</h4>
     </div>
+
+    <GmapMap
+      :center="{lat:10, lng:10}"
+      :zoom="7"
+      map-type-id="terrain"
+      style="width: 500px; height: 300px"
+    >
+      <GmapMarker
+        :key="index"
+        v-for="(m, index) in markers"
+        :position="m.position"
+        :clickable="true"
+        :draggable="true"
+        @click="center=m.position"
+      />
+    </GmapMap>
   </div>
 </template>
 
@@ -84,16 +103,17 @@
             ]
           }
         ],
-        newArr: []
+        newArr: [],
+        markers: [{position: {lat: 22.320871165992852, lng: 114.17420427218235}}],//红点位置
+
       }
     },
     methods: {
       elements (routes, level) {
         routes.map((route, index, arr) => {
-          this.newArr.push({
-            name: route.meta.text + '等级' + level,
-            level: level
-          })
+
+          route.level = level
+          this.newArr.push(route)
           if (route.children && route.children.length) {
             level++
             this.elements(route.children, level)
@@ -108,6 +128,9 @@
   }
 </script>
 
-<style scoped>
-
+<style  lang="scss">
+  @import '../../assets/scss/common.scss';
+  .font-color {
+    color: $main;
+  }
 </style>
