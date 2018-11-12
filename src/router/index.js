@@ -5,6 +5,8 @@ import ChangePassword from '@/page/ChangePassword'
 import Logout from '@/page/Logout'
 import Login from '@/page/login'
 import getMyTable from '@/page/home/get-my-table'
+import HtmlCss from '@/page/home/html-css'
+import HtmlCssJS from '@/page/home/html-css-js'
 import shop from '@/page/shop/shop'
 // src/page/login
 Vue.use(Router)
@@ -36,6 +38,16 @@ export default new Router({
       path: '/shop',
       name: 'shop',
       component: shop
+    },
+    {
+      path: '/html-css',
+      name: 'html-css',
+      component: HtmlCss
+    },
+    {
+      path: '/html-css-js',
+      name: 'html-css-js',
+      component: HtmlCssJS
     }
   ]
 })

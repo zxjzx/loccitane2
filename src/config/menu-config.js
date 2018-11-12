@@ -16,9 +16,17 @@ module.exports = [{
   icon:'el-icon-third-shouye',
   id: 'home',
   sub: [{
-    name: 'getMyTable',
+    name: 'mock table',
     icon:'el-icon-third-lock',
     componentName: 'getMyTable'
+  },{
+    name: 'html-css',
+    icon:'el-icon-third-lock',
+    componentName: 'html-css'
+  },{
+    name: 'html-css-js',
+    icon:'el-icon-third-lock',
+    componentName: 'html-css-js'
   }]
 }, {
   name: 'Shop',

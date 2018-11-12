@@ -10,6 +10,7 @@ import lang from 'element-ui/lib/locale/lang/en'
 import locale from 'element-ui/lib/locale'
 import '../theme/index.css'
 import './assets/icon/iconfont.css'
+import './assets/scss/element-variables.scss';
 import elementUIVerify from 'element-ui-verify'
 import errorMessage from './config/error-message-template'
 import * as VueGoogleMaps from 'vue2-google-maps'

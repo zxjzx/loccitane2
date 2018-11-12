@@ -19,50 +19,59 @@
 
 <script>
   import NavMenu from '@/components/NavMenu'
-export default {
-  name: 'App',
-  components:{
-    "navMenu":NavMenu
+
+  export default {
+    name: 'App',
+    components: {
+      'navMenu': NavMenu
+    }
   }
-}
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /*text-align: center;*/
-  color: #2c3e50;
-  /*margin-top: 60px;*/
-}
-body{
-  margin:0;
-  padding:0;
-}
-.el-header, .el-footer {
-  background-color: #B3C0D1;
-  color: #333;
-  text-align: center;
-  line-height: 60px;
-}
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /*text-align: center;*/
+    color: #2c3e50;
+    /*margin-top: 60px;*/
+  }
 
-.el-aside {
-  background-color: #D3DCE6;
-  color: #333;
-  /*text-align: center;*/
-  line-height: 200px;
-  min-height:700px;
-}
+  html {
+    font-size: 16px;
+  }
 
-.el-main {
-  background-color: #E9EEF3;
-  color: #333;
-  text-align: center;
-  /*line-height: 160px;*/
-}
+  body {
+    margin: 0;
+    padding: 0;
+  }
 
-body > .el-container {
-  margin-bottom: 40px;
-}
+  .el-header, .el-footer {
+    background-color: #B3C0D1;
+    color: #333;
+    text-align: center;
+    line-height: 60px;
+  }
+
+  .el-aside {
+    background-color: #D3DCE6;
+    color: #333;
+    /*text-align: center;*/
+    line-height: 200px;
+    min-height: 700px;
+  }
+
+  .el-main {
+    background-color: #E9EEF3;
+    color: #333;
+    text-align: center;
+    /*line-height: 160px;*/
+  }
+
+  body > .el-container {
+    margin-bottom: 40px;
+  }
+
+
 </style>
