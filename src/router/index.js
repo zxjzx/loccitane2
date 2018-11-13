@@ -7,6 +7,7 @@ import Login from '@/page/login'
 import getMyTable from '@/page/home/get-my-table'
 import HtmlCss from '@/page/home/html-css'
 import HtmlCssJS from '@/page/home/html-css-js'
+import HtmlCssFlex from '@/page/home/html-css-flex'
 import shop from '@/page/shop/shop'
 // src/page/login
 Vue.use(Router)
@@ -48,6 +49,11 @@ export default new Router({
       path: '/html-css-js',
       name: 'html-css-js',
       component: HtmlCssJS
+    },
+    {
+      path: '/html-css-flex',
+      name: 'html-css-flex',
+      component: HtmlCssFlex
     }
   ]
 })

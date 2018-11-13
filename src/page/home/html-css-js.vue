@@ -48,6 +48,10 @@
 
     <h2>鼠标经过盒子变换样式</h2>
     <div class="hover-btn"></div>
+
+    <h2>button居中</h2>
+
+
   </div>
 </template>
 

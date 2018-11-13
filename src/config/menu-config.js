@@ -27,6 +27,10 @@ module.exports = [{
     name: 'html-css-js',
     icon:'el-icon-third-lock',
     componentName: 'html-css-js'
+  },{
+    name: 'html-css-flex',
+    icon:'el-icon-third-lock',
+    componentName: 'html-css-flex'
   }]
 }, {
   name: 'Shop',
