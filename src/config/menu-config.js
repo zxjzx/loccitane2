@@ -14,12 +14,33 @@ module.exports = [{
 }, {
   name: 'Home',
   icon:'el-icon-third-shouye',
-  id: 'home'
+  id: 'home',
+  sub: [{
+    name: 'mock table',
+    icon:'el-icon-third-lock',
+    componentName: 'getMyTable'
+  },{
+    name: 'html-css',
+    icon:'el-icon-third-lock',
+    componentName: 'html-css'
+  },{
+    name: 'html-css-js',
+    icon:'el-icon-third-lock',
+    componentName: 'html-css-js'
+  },{
+    name: 'html-css-flex',
+    icon:'el-icon-third-lock',
+    componentName: 'html-css-flex'
+  }]
 }, {
   name: 'Shop',
   icon:'el-icon-third-location',
   id: 'shop',
-  sub: []
+  sub: [{
+    name: 'shop',
+    icon:'el-icon-third-lock',
+    componentName: 'shop'
+  }]
 }, {
   name: 'Member',
   icon:'el-icon-third-Member',

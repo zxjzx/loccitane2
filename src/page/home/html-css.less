@@ -1,0 +1,237 @@
+.css-content {
+  text-align: left;
+  height: 4000px;
+}
+
+.item-a {
+  grid-area: header;
+}
+
+.item-b {
+  grid-area: main;
+}
+
+.item-c {
+  grid-area: sidebar;
+}
+
+.item-d {
+  grid-area: footer;
+}
+
+.container {
+  height: 300px;
+  border: 1px solid red;
+  display: grid; /*给每个子元素设置为盒子，*/
+  /*grid-template-columns: 40px 50px auto 50px 40px; !*分为5列，第一列宽40px，第二列为50px ..... *!*/
+  grid-template-columns: 1fr 50px 1fr 1fr; /*可用空间总量减去 50px 后，再给 fr 单元的值3等分：*/
+  grid-template-rows: 100px 20px auto;
+
+  grid-template-areas: "header header header header" "main main . sidebar" "footer footer footer footer";
+}
+
+.item {
+  background-color: pink;
+  margin: 2px;
+}
+
+.el {
+  transition: max-height 0.5s;
+  overflow: hidden;
+  max-height: 0;
+}
+
+.trigger:hover > .el {
+  max-height: 100px;
+}
+
+.reference {
+  width: 200px;
+  height: 200px;
+  border: 1px solid red;
+  position: relative;
+}
+
+.popout-menu {
+  position: absolute;
+  visibility: hidden;
+  left: 100%;
+}
+
+.reference:hover {
+  border: 1px solid gold;
+}
+
+.reference:hover > .popout-menu {
+  visibility: visible;
+}
+
+.level3 {
+  visibility: hidden;
+  position: absolute;
+  top: 20px;
+  left: 0;
+}
+
+.popout-menu:hover .level3 {
+  visibility: visible;
+}
+
+.sibling-fade {
+
+}
+
+.sibling-fade span {
+  /**/
+  transition: opacity 0.2s, padding 0.5s;
+}
+
+.sibling-fade:hover span:not(:hover) {
+  opacity: 0.5;
+}
+
+.sibling-fade span:hover {
+  padding: 0 1rem;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-top: 20px solid red;
+  border-right: 10px solid green;
+  border-left: 20px solid pink;
+  border-bottom: 20px solid yellow;
+}
+
+
+//清除浮动的4种方式
+.floated {
+  float: left;
+}
+
+/*1、原理:
+形成了格式化上下文BFC，BFC的特点之
+BFC的区域不会和外部浮动盒子的外边距区域发生叠加。也就是说，外部任何浮动元素区域和BFC区域是泾渭分明的，不可能重叠
+BFC在计算高度的时候，内部浮动元素的高度也要计算在内。也就是说，即使BFC区域内只有一个浮动元素，BFC的高度也不会发生塌缩，高度是大于等于浮动元素的高度的。
+overflow（值不为visible）可以清除浮动了。
+此处，父盒子BFC的高度是要包括浮动元素的，所以.clearfix的高度被撑起来，达到了清除浮动影响的目的
+*/  .clearfix{
+      overflow:auto;
+    }
+
+/*2、在父级元素末尾添加的元素一个块级元素清除浮动，撑起父级元素高度
+  <div class="floated">float a</div>
+    <div class="floated">float b</div>
+    <div class="clearDiv">我的其他内容</div>
+*/
+.floated{
+  float: left;
+}
+.clearDiv{/*注意：此处必须是块级元素才能清除浮动*/
+  clear: left;
+}
+
+
+/* 3、该样式在clearfix，即父级元素的最后，添加了一个:after伪元素，通过清除伪元素的浮动，达到撑起父元素高度的目的。
+注意到该伪元素的display值为block，即，它是一个不可见的块级元素（有的地方使用table，因为table也是一个块级元素）。你可能已经意识到，这也只不过是前一种清除浮动方法（添加空白div）的另一种变形，其底层逻辑也是完全一样的。前面的三种方法，其本质上是一样的。
+*/
+/*  .clearfix::after {
+    clear: both;
+    content: '';
+    display: table;
+  }*/
+
+
+/*.clearfix:after {
+  content: "";
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+}*/
+
+
+.height-equal-width{
+  width: 30%;
+  background: pink;
+}
+.height-equal-width:before{
+  content: '';
+  padding-top: 100%;
+  float: left;
+}
+.height-equal-width:after{
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.custom-scrollbar p{
+  display: block;
+  width: 300px;
+  height: 120px;
+  overflow: scroll;
+}
+
+.custom-scrollbar>p::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  //background-color: pink;
+}
+.custom-scrollbar>p::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+.custom-scrollbar>p::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+html{
+  font-size:20px;
+}
+
+:root {
+  --some-color: #da7800;
+  --some-keyword: italic;
+  --some-size: 1.25em;
+  --some-complex-value: 1px 1px 2px whitesmoke, 0 0 1em slategray, 0 0 0.2em slategray;
+}
+.custom-variables {
+  color: var(--some-color);
+  font-size: var(--some-size);
+  font-style: var(--some-keyword);
+  text-shadow: var(--some-complex-value);
+}
+
+.content-rem{
+  width: 6em;
+  height: 6em;
+  background: red;
+}
+
+
+.donut{
+  width: 100px;
+  height: 100px;
+  //background: red;
+  position: relative;
+  animation: mymove 4s linear infinite;
+  display: inline-block;
+  border: 8px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #7983ff;
+  border-radius: 50%;
+}
+/*@keyframes mymove {
+  from{left:0px;}
+  to{left:300px;}
+}*/
+@keyframes mymove {
+  0%   {left:0px; top:0px;transform: rotate(0deg);}
+  //25%  {background:yellow; left:200px; top:0px;}
+  //50%  {background:blue; left:200px; top:200px;transform: rotate(360deg);}
+  //75%  {background:green; left:0px; top:200px;}
+  100% {left:0px; top:0px;transform: rotate(360deg);}
+}
+
