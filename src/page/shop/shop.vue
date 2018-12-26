@@ -1,8 +1,6 @@
 <template>
   <div>
     <span class="font-color">回调的作用</span>
-    再说一件事，昨晚，公司部门一块去吃了海鲜，吃的时候他们广州这边的一直在强调好好吃，
-    好划算，怎么怎么的，其实说实话，我都吃不惯，感觉许多东西都有股腥味。。。。。。。
     <div v-for="item in newArr">
       <h1 v-if="item.level==0">{{item.meta.text}} - 等级 {{item.level}}</h1>
       <h4 v-if="item.level>0">{{item.meta.text}} - 等级 {{item.level}}</h4>

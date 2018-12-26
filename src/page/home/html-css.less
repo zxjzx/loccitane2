@@ -103,7 +103,6 @@
   border-bottom: 20px solid yellow;
 }
 
-
 //清除浮动的4种方式
 .floated {
   float: left;
@@ -115,22 +114,23 @@ BFC的区域不会和外部浮动盒子的外边距区域发生叠加。也就�
 BFC在计算高度的时候，内部浮动元素的高度也要计算在内。也就是说，即使BFC区域内只有一个浮动元素，BFC的高度也不会发生塌缩，高度是大于等于浮动元素的高度的。
 overflow（值不为visible）可以清除浮动了。
 此处，父盒子BFC的高度是要包括浮动元素的，所以.clearfix的高度被撑起来，达到了清除浮动影响的目的
-*/  .clearfix{
-      overflow:auto;
-    }
+*/
+.clearfix {
+  overflow: auto;
+}
 
 /*2、在父级元素末尾添加的元素一个块级元素清除浮动，撑起父级元素高度
   <div class="floated">float a</div>
     <div class="floated">float b</div>
     <div class="clearDiv">我的其他内容</div>
 */
-.floated{
+.floated {
   float: left;
 }
-.clearDiv{/*注意：此处必须是块级元素才能清除浮动*/
+
+.clearDiv { /*注意：此处必须是块级元素才能清除浮动*/
   clear: left;
 }
-
 
 /* 3、该样式在clearfix，即父级元素的最后，添加了一个:after伪元素，通过清除伪元素的浮动，达到撑起父元素高度的目的。
 注意到该伪元素的display值为block，即，它是一个不可见的块级元素（有的地方使用table，因为table也是一个块级元素）。你可能已经意识到，这也只不过是前一种清除浮动方法（添加空白div）的另一种变形，其底层逻辑也是完全一样的。前面的三种方法，其本质上是一样的。
@@ -141,7 +141,6 @@ overflow（值不为visible）可以清除浮动了。
     display: table;
   }*/
 
-
 /*.clearfix:after {
   content: "";
   height: 0;
@@ -151,45 +150,48 @@ overflow（值不为visible）可以清除浮动了。
   clear: both;
 }*/
 
-
-.height-equal-width{
+.height-equal-width {
   width: 30%;
   background: pink;
 }
-.height-equal-width:before{
+
+.height-equal-width:before {
   content: '';
   padding-top: 100%;
   float: left;
 }
-.height-equal-width:after{
+
+.height-equal-width:after {
   content: '';
   display: block;
   clear: both;
 }
 
-.custom-scrollbar p{
+.custom-scrollbar p {
   display: block;
   width: 300px;
   height: 120px;
   overflow: scroll;
 }
 
-.custom-scrollbar>p::-webkit-scrollbar {
+.custom-scrollbar > p::-webkit-scrollbar {
   width: 10px;
   height: 10px;
   //background-color: pink;
 }
-.custom-scrollbar>p::-webkit-scrollbar-track {
+
+.custom-scrollbar > p::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
 }
-.custom-scrollbar>p::-webkit-scrollbar-thumb {
+
+.custom-scrollbar > p::-webkit-scrollbar-thumb {
   border-radius: 10px;
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }
 
-html{
-  font-size:20px;
+html {
+  font-size: 20px;
 }
 
 :root {
@@ -198,6 +200,7 @@ html{
   --some-size: 1.25em;
   --some-complex-value: 1px 1px 2px whitesmoke, 0 0 1em slategray, 0 0 0.2em slategray;
 }
+
 .custom-variables {
   color: var(--some-color);
   font-size: var(--some-size);
@@ -205,14 +208,13 @@ html{
   text-shadow: var(--some-complex-value);
 }
 
-.content-rem{
+.content-rem {
   width: 6em;
   height: 6em;
   background: red;
 }
 
-
-.donut{
+.donut {
   width: 100px;
   height: 100px;
   //background: red;
@@ -223,15 +225,24 @@ html{
   border-left-color: #7983ff;
   border-radius: 50%;
 }
+
 /*@keyframes mymove {
   from{left:0px;}
   to{left:300px;}
 }*/
 @keyframes mymove {
-  0%   {left:0px; top:0px;transform: rotate(0deg);}
+  0% {
+    left: 0px;
+    top: 0px;
+    transform: rotate(0deg);
+  }
   //25%  {background:yellow; left:200px; top:0px;}
   //50%  {background:blue; left:200px; top:200px;transform: rotate(360deg);}
   //75%  {background:green; left:0px; top:200px;}
-  100% {left:0px; top:0px;transform: rotate(360deg);}
+  100% {
+    left: 0px;
+    top: 0px;
+    transform: rotate(360deg);
+  }
 }
 

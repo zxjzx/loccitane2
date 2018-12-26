@@ -17,12 +17,23 @@
       <div class="flex-item"></div>
       <div class="flex-item"></div>
     </div>
+
+    <div id="test">test</div>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'html-css-flex'
+    name: 'html-css-flex',
+    data(vm){
+      return {
+        data:vm.size,
+      }
+    },
+    mounted(){
+      console.log(this);
+      console.log(this.$el);
+    }
   }
 </script>
 
