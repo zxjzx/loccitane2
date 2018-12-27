@@ -97,7 +97,9 @@
       <el-table-column label="操作">
         <template slot-scope="scope">
           <el-button type="danger" size="mini" @click="deleteItem(scope.row)">删除</el-button>
-          <el-button type="info" size="mini">编辑</el-button>
+
+          <router-link :to="'/user-edit/'+scope.row.id"><el-button type="info" size="mini">编辑</el-button></router-link>
+          <el-button type="info" size="mini" @click="detail(scope.row)">详情</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -118,6 +120,7 @@
 </template>
 
 <script>
+  import http from '../../config/http'
   export default {
     name: 'user-list',
     data () {
@@ -136,6 +139,10 @@
       this.getData()
     },
     methods: {
+
+      detail (detail) {
+        console.log(detail)
+      },
       searchBtn () {
         this.getData()
       },
@@ -149,22 +156,24 @@
 
       },
       getData () {
-        this.$http.post('http://localhost:1001/user/getUsersList/' + this.pager.currentPage + '/' + this.pager.pageSize, this.searchObj).then(res => {
-          this.tableList = res.data.dataList
-          this.pager = res.data.pager
+        console.log(this.$http);
+        console.log(process.env.NODE_ENV);
+        this.$http.apiPost('user/getUsersList/' + this.pager.currentPage + '/' + this.pager.pageSize, this.searchObj).then(res=>{
+          this.tableList = res.dataList
+          this.pager = res.pager
         })
 
       },
 
       deleteItem (item) {
-        this.$http.post('http://localhost:1001/user/delete/' + item.id).then(res => {
+        this.$http.apiPost('user/delete/' + item.id).then(res => {
           this.getData()
           this.$message.success('success')
         })
       },
 
       addForm () {
-        this.$http.post('http://localhost:1001/user/add', this.model).then(res => {
+        this.$http.apiPost('user/add', this.model).then(res => {
           this.model = {}
           this.getData()
         })

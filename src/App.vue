@@ -9,6 +9,8 @@
           <navMenu></navMenu>
         </el-aside>
         <el-main>
+          <p>Route context</p>
+          <pre>{{ JSON.stringify($route.path, null, 2) }}</pre>
           <router-view/>
         </el-main>
       </el-container>
@@ -60,6 +62,8 @@
     /*text-align: center;*/
     line-height: 200px;
     min-height: 700px;
+    height: 900px;
+    overflow-y: auto;
   }
 
   .el-main {
