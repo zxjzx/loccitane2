@@ -6,16 +6,16 @@
       </div>
       <el-row>
         <el-col :span="8">
-          <el-input placeholder="姓名" v-model="editObj.userName" class="input-with-select" clearable>
+          <el-input placeholder="姓名" v-model="editObj.userName" clearable>
             <template slot="prepend">姓名：</template>
           </el-input>
-          <el-input placeholder="别名" v-model="editObj.nickName" class="input-with-select" clearable>
+          <el-input placeholder="别名" v-model="editObj.nickName" clearable>
             <template slot="prepend">别名：</template>
           </el-input>
-          <el-input placeholder="性别" v-model="editObj.userSex" class="input-with-select" clearable>
+          <el-input placeholder="性别" v-model="editObj.userSex" clearable>
             <template slot="prepend">性别：</template>
           </el-input>
-          <el-input placeholder="密码" v-model="editObj.passWord" class="input-with-select" clearable>
+          <el-input placeholder="密码" v-model="editObj.passWord" clearable>
             <template slot="prepend">密码：</template>
           </el-input>
           <router-link :to="{name:'user-list'}">

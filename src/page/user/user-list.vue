@@ -159,8 +159,11 @@
         console.log(this.$http);
         console.log(process.env.NODE_ENV);
         this.$http.apiPost('user/getUsersList/' + this.pager.currentPage + '/' + this.pager.pageSize, this.searchObj).then(res=>{
+          console.log(res);
           this.tableList = res.dataList
-          this.pager = res.pager
+          if(res.pager){
+            this.pager = res.pager
+          }
         })
 
       },
