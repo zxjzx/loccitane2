@@ -2,23 +2,23 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import axios from 'axios'
-import './mock/mockjs'
-import App from './App'
-import router from './router'
+import '../mock/mockjs'
+import App from './index.vue'
+import router from '../router/index'
 import ElementUI from 'element-ui'
 import * as VueGoogleMaps from 'vue2-google-maps'
 import lang from 'element-ui/lib/locale/lang/en'
 import locale from 'element-ui/lib/locale'
 
-import '../theme/index.css'
-import './assets/icon/iconfont.css'
-import './assets/scss/element-variables.scss'
-import './assets/scss/global.scss'
+import '../../theme/index.css'
+import '../assets/icon/iconfont.css'
+import '../assets/scss/element-variables.scss'
+import '../assets/scss/global.scss'
 
 import elementUIVerify from 'element-ui-verify'
-import errorMessage from './config/error-message-template'
-import httpRequest from './config/http'
-import Utils from './config/utils'
+import errorMessage from '../config/error-message-template'
+import httpRequest from '../config/http'
+import Utils from '../config/utils'
 
 Vue.use(ElementUI)
 Vue.use(elementUIVerify, {
@@ -97,7 +97,7 @@ axios.interceptors.response.use(response => {
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
+  el: '#index',
   router,
   components: {App},
   template: '<App/>'
