@@ -18,11 +18,7 @@ const apiMethods = {
           resolve(response.data)
         }).catch((response) => {
           console.log('f', response)
-          resolve(response)
-          bus.$message({
-            message: '请求超时，请检查网络',
-            type: 'warning'
-          })
+          resolve(response);
         })
       })
     }
