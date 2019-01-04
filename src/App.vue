@@ -9,8 +9,6 @@
           <navMenu></navMenu>
         </el-aside>
         <el-main>
-          <p>Route context</p>
-          <pre>{{ JSON.stringify($route.path, null, 2) }}</pre>
           <router-view/>
         </el-main>
       </el-container>
