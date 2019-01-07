@@ -8,9 +8,9 @@ module.exports = {
       title:'Index page'
     },
     rule:{
-      entry:'src/common/rule.js',
-      template:'rule.html',
-      filename:'rule.html',
+      entry:'src/common/login.js',
+      template:'login.html',
+      filename:'login.html',
       title:'Rule page'
     },
   }

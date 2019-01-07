@@ -1,5 +1,9 @@
 <template>
   <div class="hello">
+
+    <a href="login.html">login</a><br>
+    <a href="/">index</a><br>
+
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>

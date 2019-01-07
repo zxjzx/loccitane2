@@ -1,5 +1,5 @@
 <template>
-  <div>忘记密码
+  <div style="margin:100px;">忘记密码
     <el-input v-model="input" placeholder="请输入内容"></el-input>
 
     <el-form
@@ -43,6 +43,12 @@
         input: '测试数据了'
       }
     },
+
+    methods:{
+      addForm(){
+        
+      }
+    }
 
 
 

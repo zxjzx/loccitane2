@@ -80,8 +80,8 @@ const webpackConfig = merge(baseWebpackConfig, {
       chunks: ['manifest','vendor','index']
     }),
     new HtmlWebpackPlugin({
-      filename: config.build.rule,
-      template: 'rule.html',
+      filename: config.build.login,
+      template: 'login.html',
       inject: true,
       minify: {
         removeComments: true,
@@ -92,7 +92,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       },
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
       chunksSortMode: 'dependency',
-      chunks: ['manifest','vendor','rule']
+      chunks: ['manifest','vendor','login']
     }),
     // keep module.id stable when vendor modules does not change
     new webpack.HashedModuleIdsPlugin(),
@@ -123,12 +123,6 @@ const webpackConfig = merge(baseWebpackConfig, {
     // see: https://webpack.js.org/plugins/commons-chunk-plugin/#extra-async-commons-chunk
     new webpack.optimize.CommonsChunkPlugin({
       name: 'index',
-      async: 'vendor-async',
-      children: true,
-      minChunks: 3
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'rule',
       async: 'vendor-async',
       children: true,
       minChunks: 3

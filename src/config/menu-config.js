@@ -1,6 +1,7 @@
 module.exports = [
   {
     name: 'My Account', icon: 'el-icon-third-location', id: 'basic', sub: [
+      {name: 'login', icon: 'el-icon-third-lock', componentName: 'login'},
       {name: 'ChangePassword', icon: 'el-icon-third-lock', componentName: 'changePassword'},
       {name: 'Logout', icon: 'el-icon-third-log_out', componentName: 'logout'}
     ]

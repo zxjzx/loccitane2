@@ -23,7 +23,7 @@ module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
     index: './src/common/index.js',
-    rule: './src/common/rule.js',
+    login: './src/common/login.js',
   },
   output: {
     path: config.build.assetsRoot,

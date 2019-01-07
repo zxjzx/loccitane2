@@ -1,13 +1,12 @@
 <template>
-  <div id="rule">
-    我是rule页面
+  <div id="login">
     <router-view></router-view>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'rule',
+    name: 'login',
     data () {
       return {}
     },
