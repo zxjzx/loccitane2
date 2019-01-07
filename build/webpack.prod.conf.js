@@ -127,12 +127,6 @@ const webpackConfig = merge(baseWebpackConfig, {
       children: true,
       minChunks: 3
     }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'login',
-      async: 'vendor-async',
-      children: true,
-      minChunks: 3
-    }),
 
     // copy custom static assets
     new CopyWebpackPlugin([
