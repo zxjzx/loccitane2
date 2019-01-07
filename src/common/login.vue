@@ -1,5 +1,5 @@
 <template>
-  <div id="rule">
+  <div id="login">
     我是rule页面
     <router-view></router-view>
   </div>
@@ -7,7 +7,7 @@
 
 <script>
   export default {
-    name: 'rule',
+    name: 'login',
     data () {
       return {}
     },

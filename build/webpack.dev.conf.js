@@ -59,10 +59,10 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       chunks: ['index']
     }),
     new HtmlWebpackPlugin({
-      filename: 'rule.html',
-      template: 'rule.html',
+      filename: 'login.html',
+      template: 'login.html',
       inject: true,
-      chunks: ['rule']
+      chunks: ['login']
     }),
     // copy custom static assets
     new CopyWebpackPlugin([
