@@ -9,7 +9,6 @@ module.exports = [
     name: 'User', icon: 'el-icon-third-location', id: 'user', sub: [
       {name: 'user-list', icon: '', componentName: 'user-list'},
       {name: 'user-add', icon: '', componentName: 'user-add'},
-      {name: 'user-edit', icon: '', componentName: 'user-edit'},
     ]
   },
   {

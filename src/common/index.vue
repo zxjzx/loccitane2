@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="index">
     <!--<img src="./assets/logo.png">-->
 
     <el-container>
@@ -9,6 +9,8 @@
           <navMenu></navMenu>
         </el-aside>
         <el-main>
+          <a href="rule.html">rule</a><br>
+          <a href="index.html">index</a><br>
           <router-view/>
         </el-main>
       </el-container>
@@ -21,7 +23,7 @@
   import NavMenu from '@/components/NavMenu'
 
   export default {
-    name: 'App',
+    name: 'index',
     components: {
       'navMenu': NavMenu
     }
@@ -60,6 +62,8 @@
     /*text-align: center;*/
     line-height: 200px;
     min-height: 700px;
+    height: 900px;
+    overflow-y: auto;
   }
 
   .el-main {

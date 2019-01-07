@@ -28,6 +28,6 @@ export default new Router({
     {path: '/html-css-flex', name: 'html-css-flex', component: HtmlCssFlex},
     {path: '/user-list', name: 'user-list', component: UserList},
     {path: '/user-add', name: 'user-add', component: UserAdd},
-    {path: '/user-edit', name: 'user-edit', component: UserEdit},
+    {path: '/user-edit/:id', name: 'user-edit', component: UserEdit},
   ]
 })
