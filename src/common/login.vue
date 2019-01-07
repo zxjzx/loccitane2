@@ -1,6 +1,5 @@
 <template>
   <div id="login">
-    我是rule页面
     <router-view></router-view>
   </div>
 </template>
