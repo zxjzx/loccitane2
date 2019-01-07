@@ -10,7 +10,7 @@
         </el-aside>
         <el-main>
           <a href="rule.html">rule</a><br>
-          <a href="index.html">index</a><br>
+          <a href="/">index</a><br>
           <router-view/>
         </el-main>
       </el-container>

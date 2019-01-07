@@ -5,6 +5,6 @@ import Login from '@/page/login'
 Vue.use(Router)
 export default new Router({
   routes: [
-    {path: '/login', component: Login, hidden: true},
+    {path: '/', component: Login, hidden: true},
   ]
 })
