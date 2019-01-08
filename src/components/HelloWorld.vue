@@ -1,8 +1,10 @@
 <template>
   <div class="hello">
 
-    <a href="login.html">login</a><br>
+    <a href="login.html">多页面入口进入login</a><br>
     <a href="/">index</a><br>
+
+    <router-link :to="{name:'login'}">单页面入口进入login</router-link>
 
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>

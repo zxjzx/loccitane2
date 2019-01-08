@@ -15,27 +15,46 @@ import UserEdit from '@/page/user/user-edit'
 import Dashboard from '../components/Dashboard'
 import Container from '../common/container'
 import Empty from '../components/Empty'
+
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    {path: '/login', component: Login, hidden: true, meta: {title: 'login', icon: 'el-icon-third-location'}},
-    {path: '/dashboard',name: 'dashboard', component: Dashboard, hidden: true,},
-    {path: '/', name: 'container',redirect:'hello', component: Container,meta: {title: 'dashboard', icon: 'el-icon-third-location'},
+    {path: '/login', name: 'login', component: Login, hidden: true,},
+    {path: '/dashboard', name: 'dashboard', component: Dashboard, hidden: true,},
+    {
+      path: '/', name: 'container', redirect: 'hello', component: Container,
       children: [
-        {path: 'hello', name: 'HelloWorld', component: HelloWorld,meta: {title: 'HelloWorld', icon: 'el-icon-third-location'}},
-        {path: 'logout', name: 'Logout', component: Logout},
-        {path: 'changePassword', name: 'ChangePassword', component: ChangePassword},
-        {path:'style',name:'style',component: Empty,
-          children:[
-            {path: 'getMyTable', name: 'getMyTable', component: getMyTable},
-            {path: 'shop', name: 'shop', component: shop},
-            {path: 'html-css', name: 'html-css', component: HtmlCss},
-            {path: 'html-css-js', name: 'html-css-js', component: HtmlCssJS},
+        {
+          path: 'hello',
+          name: 'hello',
+          component: HelloWorld,
+          meta: {title: 'HelloWorld', icon: 'el-icon-third-location'}
+        },
+        {path: 'logout', name: 'logout', component: Logout, meta: {title: '退出', icon: 'el-icon-third-location'}},
+        {
+          path: 'changePassword',
+          name: 'changePassword',
+          component: ChangePassword,
+          meta: {title: '忘记密码', icon: 'el-icon-third-location'}
+        },
+        {
+          path: 'style', name: 'style', component: Empty,meta: {title: 'shop', icon: 'el-icon-third-booking'},
+          children: [
+            {
+              path: 'getMyTable',
+              name: 'getMyTable',
+              component: getMyTable,
+              meta: {title: 'getMyTable', icon: 'el-icon-third-location'}
+            },
+            {path: 'shop', name: 'shop', component: shop, meta: {title: 'shop', icon: 'el-icon-third-product'}},
+            {path: 'html-css', name: 'html-css', component: HtmlCss, meta: {title: 'shop', icon: 'el-icon-third-product'}},
+            {path: 'html-css-js', name: 'html-css-js', component: HtmlCssJS, meta: {title: 'shop', icon: 'el-icon-third-product'}},
             {path: 'html-css-flex', name: 'html-css-flex', component: HtmlCssFlex},
           ]
         },
-        {path: 'user-list', name: 'user-list', component: Empty,
+        {
+          path: 'user-list', name: 'user-list', component: Empty,meta: {title: 'shop', icon: 'el-icon-third-commission'},
           children: [
             {path: '/', name: 'user-list', component: UserList},
             {path: 'user-add', name: 'user-add', component: UserAdd},
@@ -44,10 +63,6 @@ export default new Router({
         },
       ]
     },
-
-
-
-
 
   ]
 })

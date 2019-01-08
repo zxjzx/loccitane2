@@ -1,5 +1,5 @@
 <template>
-    <div>登录页面</div>
+    <div>单页面入口的登录页面</div>
 </template>
 
 <script>
