@@ -11,7 +11,8 @@
       return {}
     },
     mounted: function () {
-
+      this.$router.replace('/changepassword')
+      // this.$router.push('changepassword')
     },
   }
 </script>

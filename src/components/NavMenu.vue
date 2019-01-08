@@ -45,6 +45,9 @@
 
         this.$router.push(key)
       }
+    },
+    created(){
+      console.log(this.$router.options);
     }
   }
 </script>

@@ -1,5 +1,19 @@
 <template>
   <div style="margin:100px;">忘记密码
+
+    {{item.value9[0]==1919?'Infinity':item.value9[0]}}
+    {{item.value9[1]==2031?'Infinity':item.value9[1]}}
+    {{item.value9}}
+    <el-slider
+      v-model="item.value9"
+      range
+      show-stops
+      :min="item.min"
+      :max="item.max"
+      :format-tooltip="formatTooltip">
+    </el-slider>
+
+
     <el-input v-model="input" placeholder="请输入内容"></el-input>
 
     <el-form
@@ -40,13 +54,31 @@
     data () {
       return {
         model: {},
-        input: '测试数据了'
+        input: '测试数据了',
+        item:{
+          value9:[1920,2030],
+          min:1919,
+          max:2031
+        }
       }
+    },
+
+    created(){
+
     },
 
     methods:{
       addForm(){
-        
+
+      },
+      formatTooltip(val){
+        if(this.item.max == val){
+          return 'max'
+        }
+        if(this.item.min == val){
+          return 'min'
+        }
+        // return val / 100;
       }
     }
 

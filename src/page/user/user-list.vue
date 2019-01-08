@@ -105,7 +105,9 @@
       }
     },
     created () {
-      this.getData()
+      this.getData();
+      console.log(this.$route);
+      console.log(this.$route.matched);
     },
     methods: {
 

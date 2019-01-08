@@ -1,6 +1,18 @@
 <template>
-  <div id="index">
-    <router-view/>
+  <div>
+    <!--<img src="./assets/logo.png">-->
+
+    <el-container>
+      <el-header>Header</el-header>
+      <el-container>
+        <el-aside width="200px">
+          <navMenu></navMenu>
+        </el-aside>
+        <el-main>
+          <router-view/>
+        </el-main>
+      </el-container>
+    </el-container>
 
   </div>
 </template>
@@ -9,9 +21,12 @@
   import NavMenu from '@/components/NavMenu'
 
   export default {
-    name: 'index',
+    name: 'container',
     components: {
       'navMenu': NavMenu
+    },
+    created(){
+      console.log(this.$router.options);
     }
   }
 </script>
