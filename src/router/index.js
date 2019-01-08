@@ -25,8 +25,8 @@ export default new Router({
       children: [
         {path: 'hello', name: 'HelloWorld', component: HelloWorld,meta: {title: 'HelloWorld', icon: 'el-icon-third-location'}},
         {path: 'logout', name: 'Logout', component: Logout},
-        {path: 'ChangePassword', name: 'ChangePassword', component: ChangePassword},
-        {path:'/style',name:'style',component: Empty,
+        {path: 'changePassword', name: 'ChangePassword', component: ChangePassword},
+        {path:'style',name:'style',component: Empty,
           children:[
             {path: 'getMyTable', name: 'getMyTable', component: getMyTable},
             {path: 'shop', name: 'shop', component: shop},

@@ -33,6 +33,7 @@
     mounted(){
       console.log(this);
       console.log(this.$el);
+      console.log(this.$route)
     }
   }
 </script>
