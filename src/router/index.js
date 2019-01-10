@@ -39,7 +39,7 @@ export default new Router({
           meta: {title: '忘记密码', icon: 'el-icon-third-location'}
         },
         {
-          path: 'style', name: 'style', component: Empty,meta: {title: 'shop', icon: 'el-icon-third-booking'},
+          path: 'style', name: 'style', component: Empty, meta: {title: 'style', icon: 'el-icon-third-booking'},
           children: [
             {
               path: 'getMyTable',
@@ -48,13 +48,31 @@ export default new Router({
               meta: {title: 'getMyTable', icon: 'el-icon-third-location'}
             },
             {path: 'shop', name: 'shop', component: shop, meta: {title: 'shop', icon: 'el-icon-third-product'}},
-            {path: 'html-css', name: 'html-css', component: HtmlCss, meta: {title: 'shop', icon: 'el-icon-third-product'}},
-            {path: 'html-css-js', name: 'html-css-js', component: HtmlCssJS, meta: {title: 'shop', icon: 'el-icon-third-product'}},
-            {path: 'html-css-flex', name: 'html-css-flex', component: HtmlCssFlex},
+            {
+              path: 'html-css',
+              name: 'html-css',
+              component: HtmlCss,
+              meta: {title: 'html-css', icon: 'el-icon-third-product'}
+            },
+            {
+              path: 'html-css-js',
+              name: 'html-css-js',
+              component: HtmlCssJS,
+              meta: {title: 'html-css-js', icon: 'el-icon-third-product'}
+            },
+            {
+              path: 'html-css-flex',
+              name: 'html-css-flex',
+              component: HtmlCssFlex,
+              meta: {title: 'html-css-js', icon: 'el-icon-third-product'}
+            },
           ]
         },
         {
-          path: 'user-list', name: 'user-list', component: Empty,meta: {title: 'shop', icon: 'el-icon-third-commission'},
+          path: 'user-list',
+          name: 'user-list',
+          component: Empty,
+          meta: {title: 'user', icon: 'el-icon-third-commission'},
           children: [
             {path: '/', name: 'user-list', component: UserList},
             {path: 'user-add', name: 'user-add', component: UserAdd},

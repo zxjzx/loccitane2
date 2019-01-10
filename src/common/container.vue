@@ -2,8 +2,9 @@
   <div>
     <!--<img src="./assets/logo.png">-->
 
-    <el-container>
+   <!-- <el-container>
       <el-header>Header</el-header>
+
       <el-container>
         <el-aside width="200px">
           <navMenu></navMenu>
@@ -12,19 +13,33 @@
           <router-view/>
         </el-main>
       </el-container>
+    </el-container>-->
+
+    <el-container>
+      <el-aside width="200px">
+        <navMenu></navMenu>
+      </el-aside>
+      <el-container>
+        <el-header>
+          <Breadcrumb/>
+        </el-header>
+        <el-main>
+          <router-view/>
+        </el-main>
+      </el-container>
     </el-container>
+
 
   </div>
 </template>
 
 <script>
-  import NavMenu from '@/components/NavMenu'
+  import NavMenu from '../components/NavMenu'
+  import Breadcrumb from '../components/Breadcrumb'
 
   export default {
     name: 'container',
-    components: {
-      'navMenu': NavMenu
-    },
+    components: {NavMenu,Breadcrumb},
     created(){
       console.log(this.$router.options);
     }
