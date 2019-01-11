@@ -4,6 +4,8 @@
       <div slot="header" class="clearfix">
         <span>新增</span>
       </div>
+
+      <el-button @click="sendEmail">发送邮件</el-button>
       <el-row>
         <el-col :span="12">
           <el-form size="mini" :label-position="'right'" label-width="80px" label-suffix=":">
@@ -44,8 +46,24 @@
       }
     },
     methods:{
-      addForm () {
 
+      sendEmail(){
+        let info = {
+          receiver:"1358280824@qq.com",
+          title:"springboot测试",
+          content:'发送的内容'
+        };
+        this.$http.apiPost('sendEmail',info).then(res => {
+          if(res=='success'){
+            this.$message.success("发送成功")
+          }else{
+            this.$message.error(res.message)
+          }
+        },error=>{
+          this.$message.error(error)
+        })
+      },
+      addForm () {
         this.$http.apiPost('user/add', this.model).then(res => {
           this.$message.success("新增成功")
           this.$router.push({

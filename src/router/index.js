@@ -15,6 +15,7 @@ import UserEdit from '@/page/user/user-edit'
 import Dashboard from '../components/Dashboard'
 import Container from '../common/container'
 import Empty from '../components/Empty'
+import Email from '../page/email'
 
 Vue.use(Router)
 
@@ -79,6 +80,11 @@ export default new Router({
             {path: 'user-edit/:id', name: 'user-edit', component: UserEdit,meta: {title: 'edit user', icon: 'el-icon-third-product'}}
           ]
         },
+        {path: 'send-email',
+          name: 'send-email',
+          component: Email,
+          meta: {title: 'send-email', icon: 'el-icon-third-commission'},
+        }
       ]
     },
 
