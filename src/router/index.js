@@ -72,11 +72,11 @@ export default new Router({
           path: 'user-list',
           name: 'user-list',
           component: Empty,
-          meta: {title: 'user', icon: 'el-icon-third-commission'},
+          meta: {title: 'user list', icon: 'el-icon-third-commission'},
           children: [
             {path: '/', name: 'user-list', component: UserList},
-            {path: 'user-add', name: 'user-add', component: UserAdd},
-            {path: 'user-edit/:id', name: 'user-edit', component: UserEdit}
+            {path: 'user-add', name: 'user-add', component: UserAdd,meta: {title: 'add user', icon: 'el-icon-third-product'}},
+            {path: 'user-edit/:id', name: 'user-edit', component: UserEdit,meta: {title: 'edit user', icon: 'el-icon-third-product'}}
           ]
         },
       ]

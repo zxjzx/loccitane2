@@ -44,6 +44,7 @@
         console.log(matched)
       },
       pathCompile (path) {
+        console.log(path);
         const {params} = this.$route
         var toPath = pathToRegexp.compile(path)
         return toPath(params)
