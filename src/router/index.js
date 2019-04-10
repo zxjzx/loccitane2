@@ -77,7 +77,7 @@ export default new Router({
           children: [
             {path: '/', name: 'user-list', component: UserList},
             {path: 'user-add', name: 'user-add', component: UserAdd,meta: {title: 'add user', icon: 'el-icon-third-product'}},
-            {path: 'user-edit/:id', name: 'user-edit', component: UserEdit,meta: {title: 'edit user', icon: 'el-icon-third-product'}}
+            {path: 'user-edit/:id', name: 'user-edit', component: UserEdit,hidden:true,meta: {title: 'edit user', icon: 'el-icon-third-product'}}
           ]
         },
         {path: 'send-email',

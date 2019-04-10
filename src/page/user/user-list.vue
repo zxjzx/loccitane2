@@ -67,7 +67,7 @@
         <template slot-scope="scope">
           <el-button type="danger" size="mini" @click="deleteItem(scope.row)">删除</el-button>
 
-          <router-link :to="'/user-edit/'+scope.row.id"><el-button type="info" size="mini">编辑</el-button></router-link>
+          <router-link :to="'user-edit/'+scope.row.id"><el-button type="info" size="mini">编辑</el-button></router-link>
           <el-button type="info" size="mini" @click="detail(scope.row)">详情</el-button>
         </template>
       </el-table-column>

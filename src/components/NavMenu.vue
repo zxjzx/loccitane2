@@ -17,7 +17,9 @@
               <span>{{item.meta&&item.meta.title?item.meta.title:item.name}}</span>
             </template>
             <el-menu-item-group v-if="item.children" v-for="inItem in item.children">
-              <el-menu-item :index="inItem.name"><i v-if="inItem.meta" :class="inItem.meta.icon"></i>{{inItem.meta&&inItem.meta.title?inItem.meta.title:inItem.name}}
+              <el-menu-item v-if="!inItem.hidden" :index="inItem.name">
+                <i v-if="inItem.meta" :class="inItem.meta.icon"></i>
+                {{inItem.meta&&inItem.meta.title?inItem.meta.title:inItem.name}}
               </el-menu-item>
             </el-menu-item-group>
           </el-submenu>
